@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h1>Orphan List</h1>
+
+	{% if orphan_list %}
+	<ul>
+
+		{% for orphan in orphan_list %}
+		<li>
+			<a href="{{ orphan.get_absolute_url }}">{{ orphan.display_artNum }}</a> ({{orphan.article}})
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<p>There are no orphans in the catalog.</p>
+	{% endif %}
+{% endblock %}

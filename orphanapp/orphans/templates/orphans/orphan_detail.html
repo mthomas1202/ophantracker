@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h1>Box Number: {{orphan.boxNum}}</h1>
+
+	<p><strong>Article:</strong> <a href="{% url 'article-detail' orphan.article.pk %}">{{orphan.article}}</a></p>
+
+
+	<div style="margin-left:20px;margin-top:20px">
+		<h4>Instances</h4>
+
+		{% for copy in orphan.orphaninstance_set.all %}
+		<hr>
+		<p class="{% if copy.is_old %}text-warning{% elif copy.is_getting_old%}text-danger{% else %}text-success{% endif %}">{{ copy.date }}</p>
+		<p class ="text-muted"><strong>Id:</strong> {{copy.id}}</p>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h1>Article List</h1>
+
+	{% if article_list %}
+	<ul>
+		{% for article in article_list %}
+		<li>
+			<a href= "{{article.get_absolute_url }}">{{article.artNum}}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<p>There are no articles in the catalog.</p>
+	{% endif %}
+{% endblock %}
+
+

@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h2> {{article.artNum}} (Boxes: {{article.totBoxes}})</h2>
+	<h3> {{article.name}}</h3>
+
+
+<div style="margin-left:20px;margin-top:20px">
+	<h4>Orphans</h4>
+
+	<d1>
+	{% for orphan in article.orphan_set.all %}
+		<dt><a href="{% url 'orphan-detail' orphan.pk %}">{{orphan}}</a> ({{orphan.orphaninstance_set.all.count}})</dt>
+	{% endfor %}
+	</d1>
+
+
+</div>
+{% endblock %}
