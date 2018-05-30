@@ -23,7 +23,7 @@ STATIC_URL = '/static/'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = '8o&-xz4cg4x)!=dvnp&&g+)jnu1!sjzh!r37@*%+3)@c%(j&*r'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',' 8o&-xz4cg4x)!=dvnp&&g+)jnu1!sjzh!r37@*%+3)@c%(j&*r')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG',True))
